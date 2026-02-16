@@ -1,0 +1,9 @@
+
+{
+  "name": "ALI-CLUB Elite Combat Sports",
+  "description": "A high-end, modern sports club landing page featuring trainers, champions, video archives, and a direct Telegram-integrated enrollment system.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
