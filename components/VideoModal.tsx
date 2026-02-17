@@ -3,6 +3,7 @@ import React from 'react';
 import { Profile, Language } from '../types';
 import { UI_STRINGS } from '../constants';
 import { X, Play } from 'lucide-react';
+import { profile } from 'console';
 
 interface VideoModalProps {
   profile: Profile;
@@ -12,6 +13,14 @@ interface VideoModalProps {
 
 const VideoModal: React.FC<VideoModalProps> = ({ profile, lang, onClose }) => {
   const t = UI_STRINGS[lang];
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+  {profile.trophies.map(trophy => (
+    <div key={trophy.id} className="flex flex-col items-center bg-white/5 p-4 rounded-lg">
+      <img src={trophy.image} alt={trophy.title} className="w-32 h-32 object-contain mb-2" />
+      <span className="text-center text-gray-300 text-sm">{trophy.title}</span>
+    </div>
+  ))}
+</div>
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm transition-opacity">
       <div className="relative w-full max-w-5xl glass-card rounded-2xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
@@ -56,6 +65,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ profile, lang, onClose }) => {
       </div>
     </div>
   );
+  
 };
 
 export default VideoModal;

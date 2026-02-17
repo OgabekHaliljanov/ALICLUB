@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { PROFILES, UI_STRINGS } from './constants';
 import { Profile, Language } from './types';
 import ProfileCard from './components/ProfileCard';
-import VideoModal from './components/VideoModal';
+import TrophiesModal from './components/TrophiesModal'; // <- заменили VideoModal на TrophiesModal
 import EnrollmentForm from './components/EnrollmentForm';
 import { GoogleGenAI } from "@google/genai";
 import { Dumbbell, Trophy, Users, Play, Shield, Navigation } from 'lucide-react';
@@ -16,11 +15,10 @@ const App: React.FC = () => {
   const t = UI_STRINGS[lang];
 
   useEffect(() => {
-    // Initial fallback
+    // Fallback motto
     setMotto(lang === 'ru' ? 'Куем легенд каждым ударом.' : 'Har bir zarba bilan afsonalarni yaratamiz.');
 
     const generateMotto = async () => {
-      // Check if API key is present to avoid errors
       if (!process.env.API_KEY) return;
 
       try {
@@ -31,9 +29,7 @@ const App: React.FC = () => {
           Return ONLY the motto string in ${lang === 'ru' ? 'Russian' : 'Uzbek'} language. Focus on heritage and power.`,
           config: { temperature: 0.9 }
         });
-        if (response.text) {
-          setMotto(response.text.trim());
-        }
+        if (response.text) setMotto(response.text.trim());
       } catch (e) {
         console.error("AI Motto generation failed:", e);
       }
@@ -122,7 +118,7 @@ const App: React.FC = () => {
       {/* Stats */}
       <section className="py-12 bg-white/5 border-y border-white/5">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
+          {[ 
             { label: t.statsChampions, value: '12+', icon: Trophy },
             { label: t.statsTrainers, value: '25+', icon: Users },
             { label: t.statsMembers, value: '800+', icon: Dumbbell },
@@ -143,9 +139,7 @@ const App: React.FC = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-center md:text-left">
             <div className="space-y-4">
               <span className="text-red-500 font-bold uppercase tracking-[0.2em] text-sm">{t.ourPride}</span>
-              <h2 className="text-5xl md:text-6xl font-oswald font-bold uppercase tracking-tight">
-                {t.champions}
-              </h2>
+              <h2 className="text-5xl md:text-6xl font-oswald font-bold uppercase tracking-tight">{t.champions}</h2>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -154,7 +148,7 @@ const App: React.FC = () => {
                 key={profile.id} 
                 profile={profile} 
                 lang={lang}
-                onShowVideos={setSelectedProfile} 
+                onShowVideos={setSelectedProfile} // теперь открывает трофеи
               />
             ))}
           </div>
@@ -178,7 +172,7 @@ const App: React.FC = () => {
                 key={profile.id} 
                 profile={profile} 
                 lang={lang}
-                onShowVideos={setSelectedProfile} 
+                onShowVideos={setSelectedProfile} // кнопка Статистика
               />
             ))}
           </div>
@@ -219,9 +213,8 @@ const App: React.FC = () => {
 
       {/* Modals */}
       {selectedProfile && (
-        <VideoModal 
+        <TrophiesModal 
           profile={selectedProfile} 
-          lang={lang}
           onClose={() => setSelectedProfile(null)} 
         />
       )}

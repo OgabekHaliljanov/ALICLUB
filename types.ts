@@ -1,9 +1,8 @@
 
-export interface Video {
+export interface trophies {
   id: string;
   title: string;
-  thumbnail: string;
-  url: string;
+  image: string;
 }
 
 export interface Profile {
@@ -13,7 +12,7 @@ export interface Profile {
   specialty: Record<string, string>;
   image: string;
   description: Record<string, string>;
-  videos: Video[];
+  trophies: trophies[];
 }
 
 export interface EnrollmentData {

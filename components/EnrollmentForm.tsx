@@ -142,9 +142,10 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ lang }) => {
             onChange={(e) => setFormData({...formData, discipline: e.target.value})}
             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all appearance-none text-white"
           >
-            <option className="bg-zinc-900" value="MMA">Mixed Martial Arts</option>
+            <option className="bg-zinc-900" value="MMA">MMA</option>
+            <option className="bg-zinc-900" value="Karate">Karate</option>
             <option className="bg-zinc-900" value="Boxing">{lang === 'ru' ? 'Бокс' : 'Boks'}</option>
-            <option className="bg-zinc-900" value="BJJ">Jiu-Jitsu</option>
+            <option className="bg-zinc-900" value="BJJ">BJJ</option>
           </select>
         </div>
         <div className="space-y-2">
