@@ -66,7 +66,7 @@ export const PROFILES: Profile[] = [
       uz: 'SSSR sport ustasi / Afsona'
     },
     
-    image: '/components/im1.jpg',
+    image: '/public/image/im1.jpg',
     
     description: {
       ru: '2000 yol 29 avgistda Andijon viloyati Baliqchi tumanida tavalud topgan. Hozirgi kunda Sportning Ashihara-karate turi bpyicha trenerlik qilib kelmoqda',
@@ -76,22 +76,22 @@ export const PROFILES: Profile[] = [
   {
     id: 't1',
     title: '2025 yil 4-5 may kunlari toshkent shahrida bolib otgan sportning Ashihara-karate turi boyicha oʻtqazilgan Osiyo kubogi muspboqasida Prafessional jangda-85 kg vazin Fulkantak yoʻnalishida 1 oʻrinni egalagan',
-    image: '/components/im2.jpg'
+    image: '/public/image/im2.jpg'
   },
   {
     id: 't2',
     title: '2024 yil Toshkent shahrida boʻlib oʻtgan Osiyo chempionatida kumite yoʻnalishida -80 kg vazn toifasida faxrli 1 oʻrinni egalagan',
-    image: '/components/im3.jpg'
+    image: '/public/image/im3.jpg'
   },
   {
     id: 't3',
     title: '2023 yil 20-21 may kunlari Toshkent shahrida boʻlib oʻtgan Osiyo kubogi musoboqasida Fulkantak yonalishida -70 kg vazn toifasida fahirli 3 oʻrini qolga kiritgan',
-    image: '/components/im4.jpg'
+    image: '/public/image/im4.jpg'
   },
   {
     id: 't4',
     title: '2024-yil 4-5 may kunlari Toshkent shahrida boʻlib otgan Osiyo chempionati musoboqasida musoboqada Professinal jang Fulkantakt yoʻnalishida -80 kg vazinda 1 oʻrin chempionlik kamari sohibi bolgan',
-    image: '/components/im5.jpg'
+    image: '/public/image/im5.jpg'
   },
 ]
   }
