@@ -47,7 +47,7 @@ export const PROFILES: Profile[] = [
       ru: 'Ударная техника / UFC',
       uz: 'Zarba texnikasi / UFC'
     },
-    image: 'https://images.unsplash.com/photo-1549476464-37392f717551?q=80&w=1000&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=1000&auto=format&fit=crop',
     description: {
       ru: 'Первый узбекский боец в истории UFC. Техничный ударник и гордость страны.',
       uz: 'UFC tarixidagi birinchi o\'zbek jangchisi. Texnik zarba beruvchi va millat faxri.'
